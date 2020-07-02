@@ -1,6 +1,6 @@
 import React from "react";
 import colors from "../config/colors";
-// import LoadingButton from "./LoadingButton";
+import LoadingButton from "./LoadingButton";
 
 const styles = {
     container: {
@@ -8,9 +8,10 @@ const styles = {
         width: '100vw',
         background: colors.primary,
         margin: 0,
-        paddingLeft: 60,
-        paddingRight: 60,
+        paddingLeft: '5vw',
+        paddingRight: '5vw',
         paddingTop: '5vh',
+        textAlign: 'center',
     },
     text: {
         fontWeight: 400,
@@ -22,13 +23,13 @@ const styles = {
     }
 }
 
-const Heading = ({iteration = null}) => {
+const Heading = ({iteration = null, isReloading = null, handleClick = null}) => {
     return (
         <div style={styles.container}>
             <h2 style={styles.text}>
                 Iteration:{' '}
                 <strong style={styles.number}>{iteration}</strong>
-                {/*<LoadingButton />*/}
+                <LoadingButton isReloading={isReloading} handleClick={handleClick}/>
             </h2>
         </div>
     );

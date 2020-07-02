@@ -6,6 +6,11 @@ const styles = {
     container: {
         height: '85vh',
         width: '100vw',
+        margin: 0,
+        paddingLeft: '5vw',
+        paddingRight: '5vw',
+        paddingTop: '5vh',
+        paddingBottom: '5vh',
         background: colors.primary
     },
 }
@@ -15,7 +20,7 @@ const Plot = ({data = []}) => {
         <div style={styles.container}>
             <ResponsiveScatterPlot
                 data={data}
-                margin={{ top: 60, right: 140, bottom: 70, left: 90 }}
+                margin={0}
                 xScale={{ type: 'linear', min: 0, max: 20 }}
                 xFormat={function(e){return e}}
                 yScale={{ type: 'linear', min: 0, max: 20 }}

@@ -12,5 +12,8 @@
   },
   "devDependencies": {
     "concurrently": "^5.2.0"
+  },
+  "nodemonConfig": {
+    "ignore": ["data/*"]
   }
 }

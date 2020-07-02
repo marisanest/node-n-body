@@ -3,6 +3,9 @@
 # ide
 /.idea
 
+# config
+/config.json
+
 # dependencies
 /node_modules
 /client/node_modules

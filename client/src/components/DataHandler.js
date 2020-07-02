@@ -1,7 +1,6 @@
-import data from "../data/data.json";
-
-const DataGenerator = () => {
+const DataHandler = () => {
     let iteration = 0
+    let data = [[]]
 
     return {
         next: () => {
@@ -13,7 +12,11 @@ const DataGenerator = () => {
         getData: () => {
             return {iteration: iteration, data: data[iteration]}
         },
+        setData: (newData) => {
+            data = newData
+            iteration = 0
+        }
     }
 }
 
-export default DataGenerator;
+export default DataHandler;

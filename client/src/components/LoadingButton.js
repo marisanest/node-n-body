@@ -1,39 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import {Button} from "reactstrap";
+import React from 'react';
+import {Button} from 'reactstrap';
 
 const styles = {
     button: {
         float: 'right',
-        fontSize: '1.1rem',
+        fontSize: '1.2rem',
         fontWeight: 400,
     }
 }
 
-function simulateNetworkRequest() {
-    return new Promise((resolve) => setTimeout(resolve, 2000));
-}
-
-const LoadingButton = () => {
-    const [isLoading, setLoading] = useState(false);
-
-    useEffect(() => {
-        if (isLoading) {
-            simulateNetworkRequest().then(() => {
-                setLoading(false);
-            });
-        }
-    }, [isLoading]);
-
-    const handleClick = () => setLoading(true);
-
+const LoadingButton = ({isReloading = null, handleClick = null}) => {
     return (
         <Button
             variant="outline-light"
-            disabled={isLoading}
-            onClick={!isLoading ? handleClick : null}
-            style={styles.button}
-        >
-            {isLoading ? 'Loading…' : 'Roll a Dice'}
+            disabled={isReloading}
+            onClick={!isReloading ? handleClick : null}
+            style={styles.button}>
+            {isReloading ? 'Reloading…' : 'Reload data'}
         </Button>
     );
 }
