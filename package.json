@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "homepage":"https://mfn.uber.space/",
   "scripts": {
-    "client_development": "cd client && npm start",
-    "server_development": "nodemon server.js",
-    "development": "concurrently --kill-others-on-fail \"npm run server_development\" \"npm run client_development\"",
-    "client_production": "cd client && npm run build",
-    "server_production": "node server.js",
-    "production": "concurrently --kill-others-on-fail \"npm run client_production\" \"npm run server_production\""
+    "client": "cd client && npm start",
+    "server": "nodemon server.js",
+    "development": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "production": "cd client && npm run build && cd .. && node server.js"
   },
   "dependencies": {
     "express": "^4.16.4",
