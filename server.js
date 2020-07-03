@@ -1,10 +1,16 @@
 const express = require('express');
 const sftp = require('ssh2-sftp-client');
 const fs = require('fs');
+const path = require('path');
 const config = require('./config.json');
 
 const app = express();
+app.use(express.static('client/build'));
 let client = new sftp();
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 
 app.get('/api/data', (req, res) => {
     fs.readFile(config.files.local, (err, data) => {

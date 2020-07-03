@@ -1,10 +1,14 @@
 {
   "name": "node-n-body",
   "version": "1.0.0",
+  "homepage":"https://mfn.uber.space/",
   "scripts": {
-    "client": "cd client && npm start",
-    "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "client_development": "cd client && npm start",
+    "server_development": "nodemon server.js",
+    "development": "concurrently --kill-others-on-fail \"npm run server_development\" \"npm run client_development\"",
+    "client_production": "cd client && npm run build",
+    "server_production": "node server.js",
+    "production": "concurrently --kill-others-on-fail \"npm run client_production\" \"npm run server_production\""
   },
   "dependencies": {
     "express": "^4.16.4",
