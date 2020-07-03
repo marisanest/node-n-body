@@ -1,0 +1,14 @@
+{
+  "host": ,
+  "port": ,
+  "sftp": {
+    "host": ,
+    "port": ,
+    "user": ,
+    "password": 
+  },
+  "files": {
+    "remote": ,
+    "local": 
+  }
+}
