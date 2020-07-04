@@ -21,9 +21,9 @@ const Plot = ({data = []}) => {
             <ResponsiveScatterPlot
                 data={data}
                 margin={0}
-                xScale={{ type: 'linear', min: -100, max: 100 }}
+                xScale={{ type: 'linear', min: 0, max: 20 }}
                 xFormat={function(e){return e}}
-                yScale={{ type: 'linear', min: -100, max: 100 }}
+                yScale={{ type: 'linear', min: 0, max: 20 }}
                 yFormat={function(e){return e}}
                 blendMode="normal"
                 nodeSize={5}
