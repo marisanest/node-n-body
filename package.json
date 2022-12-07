@@ -9,7 +9,7 @@
     "production": "npm install && cd client && npm install && npm run build"
   },
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "ssh2-sftp-client": "^5.1.3"
   },
   "devDependencies": {
